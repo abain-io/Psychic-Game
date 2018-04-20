@@ -1,4 +1,4 @@
-            // The Psychic Game! Still workign on figuring out how to reset it after a win and also to show letters guessed under Guesses So Far. 
+            // The Psychic Game! Still working on figuring out how to reset it after a win and also to show letters guessed under Guesses So Far. 
             
             // Create an array that lists out all of the options (psychic options)
             var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",];
