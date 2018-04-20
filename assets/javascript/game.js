@@ -28,13 +28,13 @@
                 console.log(userGuess)
             // Display number of times user Wins (display # of times user guessed corectly) 
                 if (userGuess == computerGuess) {
-                   win=win+1 
-                   won=true
+                   win = win+1; 
+                   won = true;
                    document.querySelector(".wins").innerHTML=win;
                 } 
             // Deterine loss (# of times user failed to guess the letter correctly)
                 else if (userGuess !== computerGuess) {
-                    guessesLeft=guessesLeft-1
+                    guessesLeft = guessesLeft-1;
                     document.querySelector(".guessesLeft").innerHTML=guessesLeft;
                 }
             // Determine # of Guesses (the specific letters that the user typed. Display these until the user either wins or loses) 
@@ -42,15 +42,15 @@
             //     guessesLeft=guessesLeft-1
             //     document.querySelector(".guessesLeft").innerHTML=guessesLeft;
             // }   
-            // If user looses then game overkkkk
+            // If user looses then game over!
             if (guessesLeft === 0) {
-                lost = true
-                losses=losses+1
+                lost = true;
+                losses = losses+1;
                 document.querySelector(".losses").innerHTML=losses;
             }
             // --Still trying to figure this out too...
             if (userGuess = event.key) {
-                guessesSoFar=guessesSoFar+1
+                guessesSoFar = guessesSoFar+1;
                 document.querySelector(".guessesSoFar").innerHTML=guessesSoFar;
 
                 
@@ -59,9 +59,18 @@
 
             // When the player Wins, increase the Wins counter and start the game over again (without refreshing the page)
             // Stil trying to figure this out...
+            if (userGuess === computerGuess) {
+                win = win + 1;
+                document.querySelector(".wins").innerHTML=win;
+                //display this on screen
+                console.log("You won! Pick new letter.");
+                //Set guessesLeft back to 10
+
+                //Set guessesSoFar back to 0
+            }
             
             // When the player Loses, increase the Losses counter and restart the game without a page refresh (just like when the user wins      
-            // Stil ltrying to figure this out too...
+            // Still trying to figure this out too...
 
 
             };
