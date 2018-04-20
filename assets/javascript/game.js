@@ -5,7 +5,11 @@
 
             var win = 0; 
 
+            var won = false
+
             var losses = 0;
+
+            var lost = false
 
             var guessesLeft = 10;
 
@@ -20,27 +24,35 @@
             document.onkeyup = function (event) {
     
             // Determines which key was pressed.
-                var userGuess = event.key;
+                var userGuess = String.fromCharCode(event.key);
                 console.log(userGuess)
             // Display number of times user Wins (display # of times user guessed corectly) 
                 if (userGuess == computerGuess) {
                    win=win+1 
+                   won=true
                    document.querySelector(".wins").innerHTML=win;
                 } 
             // Deterine loss (# of times user failed to guess the letter correctly)
                 else if (userGuess !== computerGuess) {
-                    losses=losses+1
-                    document.querySelector(".losses").innerHTML=losses;
+                    guessesLeft=guessesLeft-1
+                    document.querySelector(".guessesLeft").innerHTML=guessesLeft;
                 }
             // Determine # of Guesses (the specific letters that the user typed. Display these until the user either wins or loses) 
-            if (userGuess == computerGuess || userGuess !== computerGuess) {
-                guessesLeft=guessesLeft-1
-                document.querySelector(".guessesLeft").innerHTML=guessesLeft;
-            }   
+            // if (userGuess == computerGuess || userGuess !== computerGuess) {
+            //     guessesLeft=guessesLeft-1
+            //     document.querySelector(".guessesLeft").innerHTML=guessesLeft;
+            // }   
+            // If user looses then game overkkkk
+            if (guessesLeft === 0) {
+                lost = true
+                losses=losses+1
+                document.querySelector(".losses").innerHTML=losses;
+            }
             // --Still trying to figure this out too...
             if (userGuess = event.key) {
                 guessesSoFar=guessesSoFar+1
                 document.querySelector(".guessesSoFar").innerHTML=guessesSoFar;
+
                 
             } 
 
